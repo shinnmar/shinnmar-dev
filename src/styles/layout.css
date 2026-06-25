@@ -1,0 +1,97 @@
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+.section {
+  padding-block: var(--space-2xl);
+}
+
+.section-alt {
+  background: var(--color-bg-soft);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* card base */
+.card {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--glow-lila);
+  border-color: var(--color-lila);
+}
+
+/* botón primario */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.btn-primary {
+  background: var(--gradient-sunset);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+  box-shadow: var(--glow-pink);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-lila);
+  color: var(--color-lila-soft);
+}
+
+.btn-outline:hover {
+  background: var(--color-surface);
+  box-shadow: var(--glow-lila);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding-inline: var(--space-md);
+  }
+
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+}

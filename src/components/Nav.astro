@@ -1,0 +1,99 @@
+---
+const navLinks = [
+  { label: 'home',        href: '/' },
+  { label: 'talks',       href: '/talks' },
+  { label: 'proyectos',   href: '/proyectos' },
+  { label: 'comunidades', href: '/comunidades' },
+];
+---
+
+<header class="nav-wrapper">
+  <nav class="container nav">
+    <a href="/" class="nav-logo">shinnmar<span>.dev</span></a>
+
+    <ul class="nav-links">
+      {navLinks.map(link => (
+        <li>
+          <a href={link.href} class="nav-link">{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(14, 11, 26, 0.75);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .nav-logo span {
+    background: var(--gradient-sunset);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+  }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    transition: color var(--transition);
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-sunset);
+    border-radius: var(--radius-full);
+    transition: width var(--transition);
+  }
+
+  .nav-link:hover {
+    color: var(--color-lila-soft);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      gap: var(--space-md);
+    }
+
+    .nav-logo {
+      font-size: var(--text-base);
+    }
+  }
+</style>
