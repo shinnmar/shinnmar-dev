@@ -1,0 +1,108 @@
+---
+const { title, event, location, date, lang, description, link } = Astro.props;
+---
+
+<article class="talk-card">
+  <div class="talk-card-header">
+    <span class="talk-lang">{lang}</span>
+    <span class="talk-date">{date}</span>
+  </div>
+
+  <h3 class="talk-title">{title}</h3>
+
+  <p class="talk-description">{description}</p>
+
+  <div class="talk-card-footer">
+    <div class="talk-meta">
+      <span class="talk-event">✦ {event}</span>
+      <span class="talk-location">📍 {location}</span>
+    </div>
+    <a href={link} class="btn btn-outline talk-btn" target="_blank" rel="noopener">
+      ver charla →
+    </a>
+  </div>
+</article>
+
+<style>
+  .talk-card {
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: box-shadow var(--transition), border-color var(--transition);
+  }
+
+  .talk-card:hover {
+    box-shadow: var(--glow-lila);
+    border-color: var(--color-lila);
+  }
+
+  .talk-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .talk-lang {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-pink-soft);
+    background: rgba(244, 114, 182, 0.1);
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(244, 114, 182, 0.3);
+  }
+
+  .talk-date {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-dim);
+  }
+
+  .talk-title {
+    font-size: var(--text-lg);
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+
+  .talk-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .talk-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .talk-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .talk-event {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-lila-soft);
+  }
+
+  .talk-location {
+    font-size: var(--text-xs);
+    color: var(--color-text-dim);
+  }
+
+  .talk-btn {
+    font-size: var(--text-xs);
+    padding: 0.4rem 1rem;
+    white-space: nowrap;
+  }
+</style>

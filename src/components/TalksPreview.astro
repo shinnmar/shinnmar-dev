@@ -1,0 +1,62 @@
+---
+import TalkCard from './TalkCard.astro';
+import { talks } from '../content/talks.js';
+
+const featured = talks.filter(t => t.featured);
+---
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="text-mono">✦ on stage</p>
+      <h2>Talks <span class="text-gradient">& Charlas</span></h2>
+      <p class="section-desc">
+        Espacios donde comparto sobre frontend, accesibilidad y comunidades tech.
+      </p>
+    </div>
+
+    <div class="talks-grid">
+      {featured.map(talk => (
+        <TalkCard {...talk} />
+      ))}
+    </div>
+
+    <div class="talks-cta">
+      <a href="/talks" class="btn btn-primary">see all talks ✦</a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-desc {
+    font-size: var(--text-lg);
+    max-width: 500px;
+  }
+
+  .talks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .talks-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-xl);
+  }
+
+  @media (max-width: 768px) {
+    .talks-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
