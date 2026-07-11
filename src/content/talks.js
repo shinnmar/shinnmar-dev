@@ -58,6 +58,6 @@ export const talks = [
     description:
       "How to leverage AI as an ally for designing truly accessible interfaces — real cases, real impact.",
     link: "#",
-    featured: false,
+    featured: true,
   },
 ];

@@ -2,7 +2,7 @@
 import TalkCard from './TalkCard.astro';
 import { talks } from '../content/talks.js';
 
-const featured = talks.filter(t => t.featured);
+const featured = talks.filter(t => t.featured).slice().reverse();
 ---
 
 <section class="section">
