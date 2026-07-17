@@ -1,9 +1,9 @@
 ---
+
 ---
 
 <section class="hero">
   <div class="container hero-content">
-
     <div class="hero-text">
       <p class="hero-tag text-mono">🌸 hello, world!</p>
 
@@ -15,25 +15,32 @@
       <p class="hero-roles">
         Front-End Developer & Web Designer
         <span class="dot">·</span>
-        GDG Organizer
+        Google Developer Group Organizer
         <span class="dot">·</span>
         Speaker
       </p>
 
       <p class="hero-bio">
-        crafting accessible, user-friendly web experiences with a creative eye, pixel-perfect detail, and a strong focus on modern web technologies.
+        crafting accessible, user-friendly web experiences with a creative eye,
+        pixel-perfect detail, and a strong focus on modern web technologies.
       </p>
 
       <div class="hero-actions">
         <a href="/talks" class="btn btn-primary">see my talks ✦</a>
-        <a href="/contact" class="btn btn-outline">contact me</a>
+        <a
+          href="https://www.linkedin.com/in/shirleyramos"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+        >
+          LinkedIn
+        </a>
       </div>
     </div>
 
     <div class="hero-photo">
       <img src="/img/ShirleyRamos_profile.png" alt="Shirley Ramos Martínez" />
     </div>
-
   </div>
 </section>
 
@@ -47,24 +54,32 @@
   }
 
   .hero::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -100px;
     right: -100px;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(181,123,238,0.15) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(181, 123, 238, 0.15) 0%,
+      transparent 70%
+    );
     pointer-events: none;
   }
 
   .hero::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -100px;
     left: -100px;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(244,114,182,0.1) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(244, 114, 182, 0.1) 0%,
+      transparent 70%
+    );
     pointer-events: none;
   }
 
@@ -93,7 +108,9 @@
 
   .hero-roles {
     font-size: var(--text-base);
-    color: var(--color-text-muted);
+    font-weight: 600;
+    line-height: 16px;
+    color: #b79ff8;
     display: flex;
     align-items: center;
     gap: var(--space-sm);
@@ -119,30 +136,30 @@
   }
 
   .hero-photo {
-  flex-shrink: 0;
-  width: 420px;
-  height: 420px;
-  border-radius: 40% 60% 55% 45% / 45% 45% 55% 55%;
-  border: 2px solid var(--color-lila);
-  box-shadow: var(--glow-lila);
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-@media (max-width: 768px) {
-  .hero-photo {
-    width: 180px;
-    height: 180px;
+    flex-shrink: 0;
+    width: 420px;
+    height: 420px;
+    border-radius: 40% 60% 55% 45% / 45% 45% 55% 55%;
+    border: 2px solid var(--color-lila);
+    box-shadow: var(--glow-lila);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
   }
-}
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  @media (max-width: 768px) {
+    .hero-photo {
+      width: 180px;
+      height: 180px;
+    }
+  }
 
   .badge-ring {
     width: 200px;
@@ -154,7 +171,11 @@
     justify-content: center;
     position: relative;
     animation: spin 18s linear infinite;
-    background: radial-gradient(circle, var(--color-surface) 60%, transparent 100%);
+    background: radial-gradient(
+      circle,
+      var(--color-surface) 60%,
+      transparent 100%
+    );
     box-shadow: var(--glow-lila);
   }
 
@@ -173,8 +194,12 @@
   }
 
   @keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   @media (max-width: 768px) {
@@ -201,6 +226,4 @@
       height: 150px;
     }
   }
-
-  
 </style>

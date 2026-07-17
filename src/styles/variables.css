@@ -1,8 +1,8 @@
 :root {
   /* ── Colores base ── */
-  --color-bg:         #0e0b1a;   /* morado muy oscuro */
-  --color-bg-soft:    #161026;   /* cards, secciones alternas */
-  --color-surface:    #1e1635;   /* inputs, nav */
+  --color-bg:         #0e0b1a;
+  --color-bg-soft:    #161026;
+  --color-surface:    #1e1635;
 
   /* ── Palette pixie sunset ── */
   --color-lila:       #b57bee;
@@ -13,13 +13,13 @@
   --color-mint:       #86efac;
 
   /* ── Gradient sunset ── */
-  --gradient-sunset:  linear-gradient(135deg, #b57bee, #f472b6, #fb923c);
+  --gradient-sunset:  linear-gradient(135deg, #5c47fa, #b57bee, #f966b2);
   --gradient-soft:    linear-gradient(135deg, #1e1635, #2d1f4e);
 
   /* ── Texto ── */
-  --color-text:       #f0e8ff;   /* blanco liláceo — WCAG AA ✓ */
-  --color-text-muted: #a89bc2;   /* secundario — WCAG AA ✓ */
-  --color-text-dim:   #6b5f80;   /* placeholders */
+  --color-text:       #f0e8ff;
+  --color-text-muted: #a89bc2;
+  --color-text-dim:   #6b5f80;
 
   /* ── Bordes y glow ── */
   --color-border:     #3d2f5e;

@@ -5,7 +5,7 @@ import { talks } from '../content/talks.js';
 const featured = talks.filter(t => t.featured).slice().reverse();
 ---
 
-<section class="section">
+<section class="talks">
   <div class="container">
 
     <div class="section-header">
@@ -30,6 +30,11 @@ const featured = talks.filter(t => t.featured).slice().reverse();
 </section>
 
 <style>
+
+  .talks {
+    display: none;
+  }
+  
   .section-header {
     display: flex;
     flex-direction: column;
