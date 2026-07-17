@@ -8,8 +8,7 @@
       <p class="hero-tag text-mono">🌸 hello, world!</p>
 
       <h1>
-        I'm <br />
-        <span class="text-gradient">Shirley :)</span>
+        I'm <span class="text-gradient">Shirley :)</span>
       </h1>
 
       <p class="hero-roles">
@@ -154,10 +153,18 @@
     object-position: center top;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 990px) {
     .hero-photo {
-      width: 180px;
-      height: 180px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .hero-photo img {
+      transform: scale(1.08);
+    }
+
+    .hero-text {
+      text-align: left;
     }
   }
 
@@ -202,19 +209,16 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 990px) {
     .hero-content {
       flex-direction: column;
       text-align: center;
     }
 
     .hero-roles {
-      justify-content: center;
+      justify-content: left;
     }
 
-    .hero-actions {
-      justify-content: center;
-    }
 
     .hero-badge {
       width: 150px;
