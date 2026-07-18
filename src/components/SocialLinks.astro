@@ -1,0 +1,112 @@
+---
+interface SocialLink {
+  name: string;
+  url: string;
+  icon: string;
+  iconClass?: string;
+}
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const socialLinks: SocialLink[] = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/shirleyramos",
+    icon: "/icons/social/ico-linkedin-lila.png",
+    iconClass: "social-links__icon--linkedin",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/Shinnmar",
+    icon: "/icons/social/ico-gh-lila.png",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/shinnmar",
+    icon: "/icons/social/ico-ig-lila.png",
+  },
+  {
+    name: "Medium",
+    url: "https://medium.com/@tu-usuario",
+    icon: "/icons/social/ico-medium-lila.png",
+  },
+];
+---
+
+<ul class="social-links">
+  {
+    socialLinks.map(({ name, url, icon, iconClass }) => (
+      <li>
+        <a
+          class="social-links__link"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name}, se abre en una nueva pestaña`}
+        >
+          <img
+            class:list={["social-links__icon", iconClass]}
+            src={icon}
+            alt=""
+            width="24"
+            height="24"
+            aria-hidden="true"
+          />
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .social-links__link {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border-radius: 50%;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      transform 200ms ease;
+  }
+
+  .social-links__link:hover {
+    transform: translateY(-3px);
+  }
+
+  .social-links__icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+
+  .social-links__icon--linkedin {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-links__link {
+      transition: none;
+    }
+
+    .social-links__link:hover {
+      transform: none;
+    }
+  }
+</style>
