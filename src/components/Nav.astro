@@ -9,7 +9,7 @@ const navLinks = [
 
 <header class="nav-wrapper">
   <nav class="container nav">
-    <a href="/" class="nav-logo"><span>shinnmar</span>.dev</a>
+    <a href="/" class="nav-logo"><span class="animated-name">shinnmar</span>.dev</a>
 
     <ul class="nav-links">
       {navLinks.map(link => (
@@ -43,13 +43,6 @@ const navLinks = [
     font-size: var(--text-lg);
     font-weight: 700;
     color: var(--color-text);
-  }
-
-  .nav-logo span {
-    background: var(--gradient-sunset);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 
   .nav-links {

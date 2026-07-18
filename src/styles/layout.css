@@ -65,7 +65,7 @@
 }
 
 .btn-primary {
-  background: var(--gradient-sunset);
+  background: var(--gradient-btn);
   color: #fff;
 }
 
