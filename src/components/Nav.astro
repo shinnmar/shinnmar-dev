@@ -1,21 +1,42 @@
 ---
 const navLinks = [
-  { label: 'home',      href: '/' },
-  { label: 'sobre mí',  href: '/#about' },
-  { label: 'projects',     href: '/#projects' },
-  { label: 'charlas',  href: '/#talks' },
+  { label: "home", href: "/" },
+  { label: "sobre mí", href: "/#about" },
+  { label: "projects", href: "/#projects" },
+  { label: "charlas", href: "/#talks" },
 ];
 ---
 
 <header class="nav-wrapper">
   <nav class="container nav">
-    <a href="/" class="nav-logo"><span class="animated-name">shinnmar</span>.dev</a>
+    <a href="/" class="nav-logo">
+      <span class="animated-name">shinnmar</span>.dev
+    </a>
 
-     <ul class="nav-links">
-      {navLinks.map((link) => (
-        <li><a href={link.href} class="nav-link" data-nav-link>{link.label}</a></li>
-      ))}
-    </ul> 
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      data-nav-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-menu" data-nav-menu>
+      {
+        navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="nav-link" data-nav-link>
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </nav>
 </header>
 
@@ -24,52 +45,77 @@ const navLinks = [
     position: sticky;
     top: 0;
     z-index: 100;
+
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
     background: rgba(14, 11, 26, 0.75);
     border-bottom: 1px solid var(--color-border);
   }
 
   .nav {
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     height: 64px;
   }
 
   .nav-logo {
+    position: relative;
+    z-index: 102;
+
+    flex-shrink: 0;
+
     font-family: var(--font-mono);
     font-size: var(--text-lg);
     font-weight: 700;
+
     color: var(--color-text);
+    text-decoration: none;
   }
 
   .nav-links {
     display: flex;
     align-items: center;
+
     gap: var(--space-lg);
+
+    margin: 0;
+    padding: 0;
+
     list-style: none;
   }
 
   .nav-link {
+    position: relative;
+
     font-family: var(--font-mono);
     font-size: var(--text-sm);
+
     color: var(--color-text-muted);
+    text-decoration: none;
+
     transition: color var(--transition);
-    position: relative;
   }
 
   .nav-link::after {
-    content: '';
+    content: "";
+
     position: absolute;
     bottom: -4px;
     left: 0;
+
     width: 0;
     height: 2px;
+
     background: var(--gradient-sunset);
     border-radius: var(--radius-full);
+
     transition: width var(--transition);
   }
-
 
   .nav-link:hover,
   .nav-link.active {
@@ -81,24 +127,154 @@ const navLinks = [
     width: 100%;
   }
 
+  /* Hamburger */
+
+  .nav-toggle {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 8px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: var(--color-text);
+    border-radius: var(--radius-full);
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  /* Mobile */
+
   @media (max-width: 768px) {
-    .nav-links {
-      gap: var(--space-md);
+    .nav {
+      height: 60px;
     }
 
     .nav-logo {
       font-size: var(--text-base);
     }
+
+    .nav-toggle {
+      position: relative;
+      z-index: 102;
+
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+
+      top: 60px;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      gap: 0;
+
+      padding: var(--space-md) 0;
+
+      background: rgba(14, 11, 26, 0.97);
+
+      border-bottom: 1px solid var(--color-border);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(-10px);
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+    }
+
+    .nav-links.open {
+      opacity: 1;
+      visibility: visible;
+      padding: 1rem;
+      transform: translateY(0);
+    }
+
+    .nav-links li {
+      width: 100%;
+    }
+
+    .nav-link {
+      display: block;
+
+      width: 100%;
+
+      padding: 14px 0;
+
+      font-size: var(--text-base);
+    }
+
+    .nav-link::after {
+      display: none;
+    }
+
+    /* Hamburger → X */
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
   }
 </style>
 
 <script>
-  const navLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("[data-nav-link]");
+  const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+  const menu = document.querySelector<HTMLElement>("[data-nav-menu]");
 
-  navLinks.forEach((link: HTMLAnchorElement) => {
+  const navLinks =
+    document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.toggle("open");
+
+    toggle.classList.toggle("open");
+
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      navLinks.forEach((l: HTMLAnchorElement) => l.classList.remove("active"));
+      navLinks.forEach((item) => {
+        item.classList.remove("active");
+      });
+
       link.classList.add("active");
+
+      menu?.classList.remove("open");
+      toggle?.classList.remove("open");
+
+      toggle?.setAttribute("aria-expanded", "false");
     });
   });
 </script>
