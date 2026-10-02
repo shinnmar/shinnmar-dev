@@ -1,15 +1,48 @@
 ---
-import Nav from '../components/Nav.astro';
-import '../styles/global.css';
+import Nav from "../components/Nav.astro";
+import "../styles/global.css";
 
 const { title } = Astro.props;
 ---
+
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="/styles/global.css" />
-    <title>{title} | shinnmar.dev</title>
+   <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>{title} | Frontend Developer & UI Engineer</title>
+
+    <meta
+      name="description"
+      content="Frontend Developer focused on UI Engineering, modern CSS, JavaScript and accessible web experiences. Explore my projects, talks and community work."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+
+    <meta
+      property="og:title"
+      content="Shirley Ramos | Frontend Developer & UI Engineer"
+    />
+
+    <meta
+      property="og:description"
+      content="Frontend Developer building thoughtful, accessible and polished web interfaces."
+    />
+
+    <meta
+      property="og:url"
+      content="https://shinnmar-dev.vercel.app/"
+    />
+
+    <meta
+      property="og:site_name"
+      content="shinnmar.dev"
+    />
   </head>
   <body>
     <Nav />
