@@ -22,10 +22,6 @@ const featured = talks.filter(t => t.featured).slice().reverse();
       ))}
     </div>
 
-    <div class="talks-cta">
-      <a href="/talks" class="btn btn-primary">see all talks ✦</a>
-    </div>
-
   </div>
 </section>
 
@@ -50,12 +46,6 @@ const featured = talks.filter(t => t.featured).slice().reverse();
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
-  }
-
-  .talks-cta {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--space-xl);
   }
 
   @media (max-width: 990px) {
