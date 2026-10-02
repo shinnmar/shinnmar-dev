@@ -1,0 +1,245 @@
+---
+const projects = [
+  {
+    title: "AI Developer Day 2026",
+    description:
+      "AI Developer Day 2026 - Landing page for my tech community team: GDG Callao",
+    image: "/projects/project1.webp",
+    repo: "https://github.com/shinnmar/ai-developer-day-2026",
+    site: "https://ai-developer-day-2026.vercel.app/",
+  },
+  {
+    title: "Insurance Plans",
+    description:
+      "Frontend Challenge about Insurance Plans",
+    image: "/projects/project2.webp",
+    repo: "https://github.com/shinnmar/insurance-plans",
+    site: "https://insurance-plans-weld.vercel.app/",
+  },
+  {
+    title: "Frontend challenge",
+    description:
+      "Frontend challenge using React",
+    image: "/projects/project3.webp",
+    repo: "https://github.com/shinnmar/pci-ui-scenario",
+    site: "https://pci-ui-scenario-lake.vercel.app/",
+  },
+  {
+    title: "Angular Perú LP",
+    description:
+      "Landing page for tech community team: Angular Perú.",
+    image: "/projects/project4.webp",
+    repo: "https://github.com/shinnmar/angular-peru-lp",
+    site: "https://angular-peru-lp.vercel.app/",
+  },
+  {
+    title: "Poke Api",
+    description:
+      "Interactive practice with Vue: add a Pokemon and then see the results in Team page, click Pokemon card and you will see the details.",
+    image: "/projects/project5.webp",
+    repo: "https://github.com/shinnmar/pokeApp",
+    site: "https://poke-api-navy.vercel.app/",
+  },
+  {
+    title: "Kotlin Conf LP",
+    description:
+      "Landing page built for Kotlin Conf event organized by GDG Callao.",
+    image: "/projects/project6.webp",
+    repo: "https://github.com/GDGCallao/landing-kotlinconf-peru",
+    site: "https://kotlinconf-peru.vercel.app/",
+  },
+];
+---
+
+<section class="projects" id="projects">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="text-mono">✦ selected work</p>
+
+      <h2>
+        Projects <span class="text-gradient">& Work</span>
+      </h2>
+
+      <p class="section-desc">
+        Some things I've designed and built on the web.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      {
+        projects.map((project) => (
+          <article class="project-card">
+
+            <a
+              href={project.site}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-preview"
+            >
+              <img
+                src={project.image}
+                alt={`Preview of ${project.title}`}
+                loading="lazy"
+              />
+            </a>
+
+            <div class="project-content">
+              <h3>{project.title}</h3>
+
+              <p class="project-description">
+                {project.description}
+              </p>
+
+
+              <div class="project-links">
+
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  repo ↗
+                </a>
+
+                <a
+                  href={project.site}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  live site ↗
+                </a>
+
+              </div>
+            </div>
+
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-desc {
+    font-size: var(--text-lg);
+    max-width: 500px;
+  }
+
+
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .project-card {
+    min-width: 0;
+  }
+
+
+
+  .project-preview {
+    display: block;
+    overflow: hidden;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    border-radius: 20px;
+    background: #f5f2f8;
+  }
+
+  .project-preview img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+  }
+
+  .project-preview:hover img {
+    transform: scale(1.02);
+  }
+
+  .project-content {
+    padding-top: var(--space-md);
+  }
+
+  .project-content h3 {
+    margin: 0 0 var(--space-xs);
+
+    font-size: var(--text-xl);
+    line-height: 1.2;
+  }
+
+  .project-description {
+    max-width: 520px;
+    margin: 0;
+
+    line-height: 1.6;
+    opacity: 0.75;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 0;
+    margin: var(--space-md) 0 0;
+
+    list-style: none;
+  }
+
+  .project-stack li {
+    padding: 6px 10px;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 100px;
+
+    font-size: var(--text-sm);
+  }
+
+
+  .project-links {
+    display: flex;
+    gap: var(--space-md);
+
+    margin-top: var(--space-md);
+  }
+
+  .project-links a {
+    color: inherit;
+
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+
+    transition: color 0.2s ease;
+  }
+
+  .project-links a:hover {
+    color: var(--color-purple, #b57bee);
+  }
+
+  @media (max-width: 990px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

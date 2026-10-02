@@ -1,9 +1,11 @@
 ---
 const navLinks = [
-  { label: 'home',        href: '/' },
-  { label: 'talks',       href: '/talks' },
-  { label: 'communities', href: '/communities' },
-  { label: 'contact me',   href: '/contact' },
+  { label: 'home',      href: '/' },
+  { label: 'sobre mí',  href: '/about' },
+  { label: 'projects',     href: '/#projects' },
+  { label: 'charlas',  href: '/talks' },
+  { label: 'comunidad', href: '/communities' },
+  { label: 'contacto', href: '/#contact' },
 ];
 ---
 
@@ -11,13 +13,11 @@ const navLinks = [
   <nav class="container nav">
     <a href="/" class="nav-logo"><span class="animated-name">shinnmar</span>.dev</a>
 
-    <ul class="nav-links">
-      {navLinks.map(link => (
-        <li>
-          <a href={link.href} class="nav-link">{link.label}</a>
-        </li>
+     <ul class="nav-links">
+      {navLinks.map((link) => (
+        <li><a href={link.href} class="nav-link" data-nav-link>{link.label}</a></li>
       ))}
-    </ul>
+    </ul> 
   </nav>
 </header>
 
@@ -72,11 +72,14 @@ const navLinks = [
     transition: width var(--transition);
   }
 
-  .nav-link:hover {
+
+  .nav-link:hover,
+  .nav-link.active {
     color: var(--color-lila-soft);
   }
 
-  .nav-link:hover::after {
+  .nav-link:hover::after,
+  .nav-link.active::after {
     width: 100%;
   }
 
@@ -90,3 +93,14 @@ const navLinks = [
     }
   }
 </style>
+
+<script>
+  const navLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("[data-nav-link]");
+
+  navLinks.forEach((link: HTMLAnchorElement) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((l: HTMLAnchorElement) => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>

@@ -8,7 +8,7 @@ export const talks = [
     lang: "ES",
     description:
       "Una charla sobre cómo las comunidades tech pueden ser espacios seguros, inclusivos y de crecimiento real para quienes están empezando.",
-    link: "#",
+    link: "https://www.instagram.com/p/C4v7vqVOt-y/?img_index=1",
     featured: true,
   },
   {
@@ -21,7 +21,7 @@ export const talks = [
     lang: "ES",
     description:
       "Una charla para romper el mito de que necesitas una carrera de sistemas para ser developer, dirigida a mujeres que quieren entrar al mundo tech.",
-    link: "#",
+    link: "https://lnkd.in/p/dD5S6bh4",
     featured: true,
   },
   {
@@ -33,7 +33,7 @@ export const talks = [
     lang: "ES",
     description:
       "Las habilidades más valiosas en tech no siempre están en la documentación — están en la comunidad.",
-    link: "#",
+    link: "https://www.instagram.com/p/DVHn72ZDS3pdpUsra8mBUg9QgClYrfm6u6DC1U0/?img_index=1",
     featured: true,
   },
   {
@@ -45,7 +45,7 @@ export const talks = [
     lang: "ES",
     description:
       "Cómo usar IA como aliada para diseñar interfaces verdaderamente accesibles, con casos reales y buenas prácticas.",
-    link: "#",
+    link: "https://lnkd.in/p/dmkAiJcb",
     featured: true,
   },
   {
@@ -57,7 +57,7 @@ export const talks = [
     lang: "EN",
     description:
       "How to leverage AI as an ally for designing truly accessible interfaces — real cases, real impact.",
-    link: "#",
+    link: "https://youtu.be/-EbhpVkydkM?si=W2g2zkGcXX6vBloE",
     featured: true,
   },
 ];
