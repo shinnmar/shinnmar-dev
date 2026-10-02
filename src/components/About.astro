@@ -1,0 +1,142 @@
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="section-header">
+        <p class="text-mono">✦ about me</p>
+
+        <h2>
+          Building interfaces
+          <span class="text-gradient"> with intention.</span>
+        </h2>
+      </div>
+
+      <div class="about-content">
+        <p class="about-intro">
+          I'm a Frontend Developer with over five years of experience building
+          digital experiences for local and international projects.
+        </p>
+
+        <p>
+          I enjoy working at the intersection of code and design, turning ideas
+          into responsive, accessible and well-crafted interfaces.
+        </p>
+
+        <p>
+          My work focuses on UI Engineering, modern CSS and JavaScript, with
+          experience using frameworks such as React, Angular and Vue. I care
+          about the details that make a product feel good to use — from
+          responsive behavior and performance to accessibility and visual
+          consistency.
+        </p>
+
+        <p>
+          Beyond building for the web, I'm also a community organizer and
+          speaker. I enjoy creating spaces where developers can learn, connect
+          and share knowledge.
+        </p>
+
+        <div class="about-tags">
+          <span>Frontend Development</span>
+          <span>UI Engineering</span>
+          <span>JavaScript</span>
+          <span>CSS</span>
+          <span>Accessibility</span>
+          <span>Community</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: var(--space-2xl) 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .section-header h2 {
+    max-width: 520px;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+
+    max-width: 650px;
+  }
+
+  .about-content p {
+    margin: 0;
+
+    font-size: var(--text-lg);
+    line-height: 1.7;
+
+    opacity: 0.78;
+  }
+
+  .about-content .about-intro {
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    line-height: 1.5;
+    font-weight: 500;
+
+    opacity: 1;
+  }
+
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: var(--space-sm);
+  }
+
+  .about-tags span {
+    padding: 7px 12px;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 100px;
+
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+  }
+
+  @media (max-width: 990px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .about-content {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about {
+      padding: var(--space-xl) 0;
+    }
+
+    .about-content p {
+      font-size: 1rem;
+    }
+
+    .about-content .about-intro {
+      font-size: 1.25rem;
+    }
+  }
+</style>
